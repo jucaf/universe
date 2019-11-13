@@ -7,13 +7,6 @@
             "privileged": true,
             "forcePullImage": false,
             "parameters": [],
-            "portMappings": [
-                {
-                    "containerPort": 8888,
-                    "hostPort": 8888,
-                    "protocol": "tcp"
-                }
-            ]
         }
     },
     "cmd": "apt-get install -y wget && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/core-site.xml && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/hdfs-site.xml && mv core-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/core-site.xml && mv hdfs-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/hdfs-site.xml && mv $MESOS_SANDBOX/hadoop-3.2.1 /usr/share/hue/hadoop-3.2.1 && cp -f $MESOS_SANDBOX/hue.ini /usr/share/hue/desktop/conf/hue.ini && ./usr/share/hue/hadoop-3.2.1/bin/hdfs --daemon start httpfs && ./startup.sh",
