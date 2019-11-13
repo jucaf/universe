@@ -1,0 +1,19 @@
+{
+  "assets": {
+    "container": {
+      "docker": {
+        "hue-docker": "mesosphere/hue"
+      }
+    },
+    "uris": {
+      "hadoop": "https://apache.rediris.es/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz",
+      "hue-ini": "https://dcosutils.blob.core.windows.net/kloudoop/hue.ini",
+      "httpfs-site-xml": "https://downloads.mesosphere.com/hue/httpfs-site.xml"
+    }
+  },
+  "images": {
+    "icon-small": "https://downloads.mesosphere.com/assets/universe/000/hue-icon-small.png",
+    "icon-medium": "https://downloads.mesosphere.com/assets/universe/000/hue-icon-medium.png",
+    "icon-large": "https://downloads.mesosphere.com/assets/universe/000/hue-icon-large.png"
+  }
+}
