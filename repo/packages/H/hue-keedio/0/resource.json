@@ -7,7 +7,7 @@
     },
     "uris": {
       "hadoop": "https://apache.rediris.es/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz",
-      "hue-ini": "https://dcosutils.blob.core.windows.net/kloudoop/hue.ini",
+      "hue-ini": "https://raw.githubusercontent.com/kloudoop/universe/master/repo/packages/H/hue-keedio/0/hue.ini",
       "httpfs-site-xml": "https://downloads.mesosphere.com/hue/httpfs-site.xml"
     }
   },

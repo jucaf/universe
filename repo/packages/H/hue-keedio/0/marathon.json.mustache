@@ -6,10 +6,10 @@
             "image": "gethue/hue:20191112-135001",
             "privileged": true,
             "forcePullImage": false,
-            "parameters": [],
+            "parameters": []
         }
     },
-    "cmd": "apt-get install -y wget && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/core-site.xml && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/hdfs-site.xml && mv core-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/core-site.xml && mv hdfs-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/hdfs-site.xml && mv $MESOS_SANDBOX/hadoop-3.2.1 /usr/share/hue/hadoop-3.2.1 && cp -f $MESOS_SANDBOX/hue.ini /usr/share/hue/desktop/conf/hue.ini && ./usr/share/hue/hadoop-3.2.1/bin/hdfs --daemon start httpfs && ./startup.sh",
+    "cmd": "apt-get install -y wget default-jre && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/core-site.xml && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/hdfs-site.xml && mv core-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/core-site.xml && mv hdfs-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/hdfs-site.xml && mv $MESOS_SANDBOX/hadoop-3.2.1 /usr/share/hue/hadoop-3.2.1 && cp -f $MESOS_SANDBOX/hue.ini /usr/share/hue/desktop/conf/hue.ini && export JAVA_HOME=/usr/lib/jvm/default-java && cd /usr/share/hue/hadoop-3.2.1/bin/ && ./hdfs --daemon start httpfs && cd /usr/share/hue/ && ./startup.sh",
     "cpus": 1,
     "disk": 10000,
     "mem": 4096,
@@ -32,14 +32,6 @@
         }
     ],
     "healthChecks": [
-        {
-            "protocol": "HTTP",
-            "portIndex": 0,
-            "path": "/",
-            "gracePeriodSeconds": 600,
-            "intervalSeconds": 20,
-            "maxConsecutiveFailures": 3
-        }
     ],
     "uris": [
         "{{resource.assets.uris.hadoop}}",
