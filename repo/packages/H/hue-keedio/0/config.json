@@ -6,34 +6,29 @@
       "type": "object",
       "properties": {
         "port": {
-          "description": "A custom static port for hue, if desired. This assists with external load balancers to discover hue.",
+          "description": "Custom port to access Hue from the load balancer.",
           "type": "integer",
-          "minimum": 0,
-          "default": 0
-        }
-      },
-      "required": [
-        "port"
-      ]
-    },
-    "httpfs": {
-      "description": "Httpfs specific configuration properties",
-      "type": "object",
-      "properties": {
-        "port": {
-          "description": "A custom static port for httpfs, if desired. This assists with external load balancers to discover httpfs.",
+          "default": 8888
+        },
+        "cpus": {
+          "description": "Hue pod CPU requirements",
+          "type": "number",
+          "default": 1
+        },
+        "mem": {
+          "description": "Hue pod mem requirements (in MB)",
           "type": "integer",
-          "minimum": 0,
-          "default": 0
+          "default": 4096
+        },
+        "disk": {
+          "description": "Hue pod persistent disk requirements (in MB)",
+          "type": "integer",
+          "default": 10000
         }
-      },
-      "required": [
-        "port"
-      ]
+      }
     }
   },
   "required": [
-    "hue",
-    "httpfs"
+    "hue"
   ]
 }

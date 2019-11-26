@@ -12,26 +12,20 @@
                 {
                     "containerPort": 8888,
                     "hostPort": 0,
-                    "servicePort": 8888,
+                    "servicePort": {{hue.port}},
                     "protocol": "tcp"
                 }
             ]
         }
     },
     "cmd": "apt-get install -y wget openjdk-8-jre && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/core-site.xml && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/hdfs-site.xml && mv core-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/core-site.xml && mv hdfs-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/hdfs-site.xml && mv $MESOS_SANDBOX/hadoop-3.2.1 /usr/share/hue/hadoop-3.2.1 && cp -f $MESOS_SANDBOX/hue.ini /usr/share/hue/desktop/conf/hue.ini && cp -f $MESOS_SANDBOX/httpfs-site.xml /usr/share/hue/hadoop-3.2.1/etc/hadoop/httpfs-site.xml && update-java-alternatives -s java-1.8.0-openjdk-amd64 && export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64 && cd /usr/share/hue/hadoop-3.2.1/bin/ && ./hdfs --daemon start httpfs && cd /usr/share/hue/ && ./startup.sh",
-    "cpus": 1,
-    "disk": 10000,
-    "mem": 4096,
+    "cpus": {{hue.cpus}},
+    "disk": {{hue.disk}},
+    "mem": {{hue.mem}},
     "instances": 1,
-    "maxLaunchDelaySeconds": 300,
     "upgradeStrategy": {
         "maximumOverCapacity": 1,
         "minimumHealthCapacity": 1
-    },
-    "killSelection": "YOUNGEST_FIRST",
-    "unreachableStrategy": {
-        "inactiveAfterSeconds": 0,
-        "expungeAfterSeconds": 0
     },
     "healthChecks": [
         {
