@@ -1,0 +1,123 @@
+{
+  "type": "object",
+  "properties": {
+    "service": {
+      "type": "object",
+      "description": "DC/OS service configuration properties",
+      "properties": {
+        "name": {
+          "description": "The name of the service instance",
+          "type": "string",
+          "default": "yarn"
+        },
+        "user": {
+          "description": "The user that the service will run as.",
+          "type": "string",
+          "default": "nobody"
+        },
+        "log_level": {
+          "description": "The log level for the DC/OS service.",
+          "type": "string",
+          "enum": [
+            "OFF",
+            "FATAL",
+            "ERROR",
+            "WARN",
+            "INFO",
+            "DEBUG",
+            "TRACE",
+            "ALL"
+          ],
+          "default": "INFO"
+        },
+        "hdfs_service_name": {
+          "description": "HDFS service name already running in the DCOS Cluster",
+          "type": "string",
+          "default": "hdfs"
+        }
+      }
+    },
+    "resourcemanager": {
+      "description": "Resourcemanager pod configuration properties",
+      "type": "object",
+      "properties": {
+        "cpus": {
+          "description": "Resourcemanager pod CPU requirements",
+          "type": "number",
+          "default": 1
+        },
+        "mem": {
+          "description": "Resourcemanager pod mem requirements (in MB)",
+          "type": "integer",
+          "default": 2048
+        },
+        "disk": {
+          "description": "Resourcemanager pod persistent disk requirements (in MB)",
+          "type": "integer",
+          "default": 10000
+        },
+        "volume_profile": {
+          "description": "Resourcemanager pod persistent volume profile requirements",
+          "type": "string",
+          "default": ""
+        },
+        "count": {
+          "description": "Number of Resourcemanager pods to run",
+          "type": "integer",
+          "default": 1
+        }
+      },
+      "required": [
+        "cpus",
+        "mem",
+        "disk",
+        "count"
+      ]
+    },
+    "nodemanager": {
+      "description": "nodemanager pod configuration properties",
+      "type": "object",
+      "properties": {
+        "cpus": {
+          "description": "nodemanager pod CPU requirements",
+          "type": "number",
+          "default": 1
+        },
+        "mem": {
+          "description": "nodemanager pod mem requirements (in MB)",
+          "type": "integer",
+          "default": 2048
+        },
+        "disk": {
+          "description": "nodemanager pod persistent disk requirements (in MB)",
+          "type": "integer",
+          "default": 10000
+        },
+        "volume_profile": {
+          "description": "nodemanager pod persistent volume profile requirements",
+          "type": "string",
+          "default": ""
+        },
+        "count": {
+          "description": "Number of nodemanager pods to run",
+          "type": "integer",
+          "default": 3
+        },
+        "placement": {
+          "description": "Placement constraints for nodemanager pods",
+          "type": "string",
+          "default": "[[\"hostname\",\"UNIQUE\"],[\"hadoop\",\"IS\",\"datanode\"]]",
+          "media": {
+            "type": "application/x-zone-constraints+json"
+          }
+        }
+      },
+      "required": [
+        "cpus",
+        "mem",
+        "disk",
+        "count"
+      ]
+    }
+  }
+}

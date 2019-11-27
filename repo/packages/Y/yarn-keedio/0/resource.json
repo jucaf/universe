@@ -1,0 +1,17 @@
+{
+  "assets": {
+    "uris": {
+      "jre-tar-gz": "https://dcosutils.blob.core.windows.net/kloudoop/openjdk-jre-11.0.3.7-hotspot-linux-x64.tar.gz",
+      "hadoop-tar-gz": "https://dcosutils.blob.core.windows.net/kloudoop/hadoop-3.2.1.tar.gz",
+      "libmesos-bundle-tar-gz": "https://dcosutils.blob.core.windows.net/kloudoop/libmesos-bundle-1.14-beta.tar.gz",
+      "scheduler-zip": "https://dcosutils.blob.core.windows.net/kloudoop/yarn-scheduler.zip",
+      "bootstrap-zip": "https://dcosutils.blob.core.windows.net/kloudoop/bootstrap.zip",
+      "jre8": "https://dcosutils.blob.core.windows.net/kloudoop/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz"
+    }
+  },
+  "images": {
+    "icon-small": "https://dcosutils.blob.core.windows.net/kloudoop/elephant.png",
+    "icon-medium": "https://dcosutils.blob.core.windows.net/kloudoop/elephant.png",
+    "icon-large": "https://dcosutils.blob.core.windows.net/kloudoop/elephant.png"
+  }
+}
