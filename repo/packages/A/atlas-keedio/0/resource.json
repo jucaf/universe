@@ -1,0 +1,16 @@
+{
+  "assets": {
+    "container": {
+      "docker": {
+        "atlas-docker": "keedio/atlas"
+      }
+    },
+    "uris": {
+    }
+  },
+  "images": {
+    "icon-small": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.svg",
+    "icon-medium": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.svg",
+    "icon-large": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.svg"
+  }
+}

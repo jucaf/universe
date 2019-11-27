@@ -1,0 +1,11 @@
+{
+  "packagingVersion": "2.0",
+  "name": "atlas-keedio",
+  "version": "0.1",
+  "scm": "https://github.com/kloudoop/universe.git",
+  "maintainer": "ofernandez@keedio.com",
+  "description": "Apache Atlas DC/OS Service",
+  "preInstallNotes": "This DC/OS Service is currently in preview.",
+  "framework": false,
+  "tags": ["atlas", "governance", "big data"]
+}

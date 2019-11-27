@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "atlas": {
+      "description": "Atlas specific configuration properties",
+      "type": "object",
+      "properties": {
+        "kafka-brokers": {
+          "description": "Kafka Broker list",
+          "type": "string",
+          "default": "broker.kafka.l4lb.thisdcos.directory:9092"
+        },
+        "kafka-topic-replication": {
+          "description": "Kafka replication factor",
+          "type": "integer",
+          "default": 1
+        },
+        "elastic-hostname": {
+          "description": "ElasticSearch hostname",
+          "type": "string",
+          "default": "coordinator.elastic.l4lb.thisdcos.directory"
+        },
+        "elastic-port": {
+          "description": "ElasticSearch port",
+          "type": "integer",
+          "default": 9200
+        },
+        "cassandra-hostname": {
+          "description": "Cassandra hostname",
+          "type": "string",
+          "default": "node-0-server.cassandra.autoip.dcos.thisdcos.directory"
+        },
+        "cassandra-replication": {
+          "description": "Cassandra replication factor",
+          "type": "integer",
+          "default": 1
+        },
+        "port": {
+          "description": "Custom port to access Atlas from the load balancer.",
+          "type": "integer",
+          "default": 21000
+        },
+        "cpus": {
+          "description": "Atlas pod CPU requirements",
+          "type": "number",
+          "default": 1
+        },
+        "mem": {
+          "description": "Atlas pod mem requirements (in MB)",
+          "type": "integer",
+          "default": 4096
+        },
+        "disk": {
+          "description": "Atlas pod persistent disk requirements (in MB)",
+          "type": "integer",
+          "default": 10000
+        }
+      }
+    }
+  },
+  "required": [
+    "atlas"
+  ]
+}
