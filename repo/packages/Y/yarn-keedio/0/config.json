@@ -8,7 +8,7 @@
         "name": {
           "description": "The name of the service instance",
           "type": "string",
-          "default": "yarn"
+          "default": "yarn-keedio"
         },
         "user": {
           "description": "The user that the service will run as.",
