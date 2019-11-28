@@ -7,5 +7,5 @@
   "description": "Apache Atlas DC/OS Service",
   "preInstallNotes": "This DC/OS Service is currently in preview.",
   "framework": false,
-  "tags": ["atlas", "governance", "big data"]
+  "tags": ["atlas", "governance", "bigdata"]
 }
