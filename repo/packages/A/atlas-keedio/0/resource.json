@@ -9,8 +9,8 @@
     }
   },
   "images": {
-    "icon-small": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.svg",
-    "icon-medium": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.svg",
-    "icon-large": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.svg"
+    "icon-small": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.jpg",
+    "icon-medium": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.jpg",
+    "icon-large": "https://dcosutils.blob.core.windows.net/kloudoop/atlas-logo.jpg"
   }
 }
