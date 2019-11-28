@@ -1,0 +1,9 @@
+{
+  "packagingVersion": "2.0",
+  "name": "rstudio-keedio",
+  "version": "0.1",
+  "maintainer": "support@keedio.com",
+  "description": "RStudio on DC/OS",
+  "framework": false,
+  "tags": ["rstudio"]
+}

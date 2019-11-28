@@ -1,0 +1,15 @@
+
+{
+  "assets": {
+    "container": {
+        "docker": {
+            "rstudioimage": "rocker/rstudio:3.6.1"
+        }
+    }
+  },
+  "images": {
+    "icon-small": "https://dcosutils.blob.core.windows.net/kloudoop/rstudio-logo.png",
+    "icon-medium": "https://dcosutils.blob.core.windows.net/kloudoop/rstudio-logo.png",
+    "icon-large": "https://dcosutils.blob.core.windows.net/kloudoop/rstudio-logo.png"
+  }
+}

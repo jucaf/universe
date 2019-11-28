@@ -1,0 +1,38 @@
+{
+  "id": "/rstudio-keedio",
+  "instances": 1,
+  "cpus": {{service.cpus}},
+  "mem": {{service.mem}},
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "rocker/rstudio:3.6.1",
+      "privileged": true,
+      "forcePullImage": false,
+      "parameters": [],
+      "network": "BRIDGE",
+      "portMappings": [
+          {
+              "containerPort": 8787,
+              "hostPort": 0,
+              "servicePort": 8787,
+              "protocol": "tcp"
+          }
+       ]
+    }
+  },
+  "env": {
+    "PASSWORD": "{{service.password}}"
+  },
+  "labels": {
+    "DCOS_SERVICE_NAME": "rstudio-keedio",
+    "DCOS_SERVICE_PORT_INDEX": "0",
+    "DCOS_SERVICE_SCHEME": "http",
+    "HAPROXY_GROUP": "external",
+    "DCOS_PACKAGE_IS_FRAMEWORK": "false"
+  },
+  "upgradeStrategy":{
+    "minimumHealthCapacity": 0,
+    "maximumOverCapacity": 0
+  }
+}

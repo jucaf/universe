@@ -1,9 +1,0 @@
-{
-  "packagingVersion": "4.0",
-  "minDcosReleaseVersion": "1.11",
-  "name": "rstudio",
-  "version": "1.0.0",
-  "maintainer": "support@keedio.com",
-  "description": "RStudio on DC/OS",
-  "tags": ["rstudio"]
-}

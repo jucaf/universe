@@ -6,22 +6,24 @@
       "description": "DC/OS service configuration properties",
       "properties": {
         "name": {
-          "description": "RStudio from The Rocker Project",
+          "description": "rstudio from The Rocker Project",
           "type": "string",
-          "default": "rstudio",
-          "title": "rstudio"
+          "default": "rstudio-keedio"
         },
         "cpus": {
-          "title": "CPU count",
           "description": "rstudio pod CPU requirements",
-          "type": "number",
+          "type": "integer",
           "default": 1
         },
         "mem": {
-          "title": "Memory size (MB)",
           "description": "rstudio pod mem requirements (in MB)",
-          "type": "number",
+          "type": "integer",
           "default": 128 
+        },
+	"password": {
+          "description": "rstudio password",
+          "type": "string",
+          "default": "keedio"
         }
       }
     }
