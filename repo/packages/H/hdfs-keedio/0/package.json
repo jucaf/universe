@@ -11,7 +11,6 @@
   "version": "0.1",
   "maintainer": "ofernandez@keedio.com",
   "description": "Kloudoop Apache Hadoop Distributed File System (HDFS)",
-  "selected": true,
   "framework": true,
   "tags": [
     "hdfs",
