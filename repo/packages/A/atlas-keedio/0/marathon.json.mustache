@@ -3,7 +3,7 @@
     "container": {
         "type": "DOCKER",
         "docker": {
-            "image": "keedio/atlas:release-0.0.1",
+            "image": "keedio/atlas:1.0.0",
             "privileged": true,
             "forcePullImage": false,
             "parameters": [],
@@ -13,6 +13,12 @@
                     "containerPort": 21000,
                     "hostPort": 0,
                     "servicePort": {{atlas.port}},
+                    "protocol": "tcp"
+                },
+                {
+                    "containerPort": 8080,
+                    "hostPort": 0,
+                    "servicePort": {{atlas.repository-port}},
                     "protocol": "tcp"
                 }
             ]
@@ -26,31 +32,11 @@
         "ZOOKEEPER_HOSTS": "master.mesos:2181",
         "KAFKA_BROKER_LIST": "{{atlas.kafka-brokers}}",
         "KAFKA_TOPIC_REPLICATION": "{{atlas.kafka-topic-replication}}",
-        "INDEX_BACKEND": "elasticsearch",
+        "INDEX_BACKEND_LIST": {{atlas.elastic-hostname}}:
         "INDEX_BACKEND_HOSTNAME": "{{atlas.elastic-hostname}}",
         "INDEX_BACKEND_PORT": "{{atlas.elastic-port}}",
-        "STORAGE_BACKEND": "cassandra",
         "STORAGE_BACKEND_HOSTNAME": "{{atlas.cassandra-hostname}}",
-        "CASSANDRA_NAMESPACE": "cassandra",
-        "CASSANDRA_REPLICATION_FACTOR": "{{atlas.cassandra-replication}}",
-        "DISABLED_AUDIT": "false",
-        "AUTH_KERBEROS": "false",
-        "AUTH_FILE": "true",
-        "USER_CRED_FILE": "/atlas/conf/users-credentials.properties",
-        "AUTH_LDAP": "false",
-        "KERBEROS_PRINCIPAL_FQDN": "",
-        "KERBEROS_KEYTAB": "",
-        "LDAP_TYPE": "ad",
-        "LDAP_SERVER": "",
-        "LDAP_PORT": "389",
-        "BASEDN": "dc=example,dc=com",
-        "USERDN": "uid={0},ou=People",
-        "GROUP_SEARCH": "(member=uid={0},ou=Users,dc=example,dc=com)",
-        "GROUP_ROLE_ATT": "cn",
-        "BIND_USER": "cn=Manager,dc=example,dc=com",
-        "SEARCH_FILTER": "(uid={0})|(sAMAccountName={0})",
-        "DEFAULT_ROLE": "viewer",
-        "DOMAIN": "example.com"
+        "CASSANDRA_REPLICATION_FACTOR": "{{atlas.cassandra-replication}}"
     },
     "cmd": "./atlas/bin/start.sh",
     "cpus": {{atlas.cpus}},

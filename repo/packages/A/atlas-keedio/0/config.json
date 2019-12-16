@@ -40,6 +40,11 @@
           "type": "integer",
           "default": 21000
         },
+        "repository-port": {
+          "description": "Custom port to access Atlas repository from the load balancer.",
+          "type": "integer",
+          "default": 21001
+        },
         "cpus": {
           "description": "Atlas pod CPU requirements",
           "type": "number",
