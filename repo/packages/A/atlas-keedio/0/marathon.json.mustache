@@ -32,9 +32,7 @@
         "ZOOKEEPER_HOSTS": "master.mesos:2181",
         "KAFKA_BROKER_LIST": "{{atlas.kafka-brokers}}",
         "KAFKA_TOPIC_REPLICATION": "{{atlas.kafka-topic-replication}}",
-        "INDEX_BACKEND_LIST": {{atlas.elastic-hostname}}:
-        "INDEX_BACKEND_HOSTNAME": "{{atlas.elastic-hostname}}",
-        "INDEX_BACKEND_PORT": "{{atlas.elastic-port}}",
+        "INDEX_BACKEND_LIST": "{{atlas.elastic-hostname}}:{{atlas.elastic-port}}",
         "STORAGE_BACKEND_HOSTNAME": "{{atlas.cassandra-hostname}}",
         "CASSANDRA_REPLICATION_FACTOR": "{{atlas.cassandra-replication}}"
     },
