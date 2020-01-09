@@ -1,10 +1,10 @@
 {
   "packagingVersion": "2.0",
   "name": "atlas-keedio",
-  "version": "0.2",
+  "version": "0.3",
   "scm": "https://github.com/kloudoop/universe.git",
   "maintainer": "ofernandez@keedio.com",
-  "description": "Apache Atlas DC/OS Service",
+  "description": "Apache Atlas DC/OS Service. Needs Elastic 2.6.0 + Kafka + Cassandra with Rpc enabled",
   "preInstallNotes": "This DC/OS Service is currently in preview.",
   "framework": false,
   "tags": ["atlas", "governance", "bigdata"]
