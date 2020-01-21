@@ -1,5 +1,5 @@
 {
-  "packagingVersion": "2.0",
+  "packagingVersion": "4.0",
   "name": "hue-keedio",
   "version": "0.1",
   "scm": "https://github.com/kloudoop/universe.git",

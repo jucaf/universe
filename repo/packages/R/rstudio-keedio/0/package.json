@@ -1,9 +1,11 @@
 {
-  "packagingVersion": "2.0",
+  "packagingVersion": "4.0",
   "name": "rstudio-keedio",
   "version": "0.1",
+  "scm": "https://github.com/kloudoop/universe.git",
   "maintainer": "support@keedio.com",
   "description": "RStudio on DC/OS",
+  "preInstallNotes": "This DC/OS Service is currently in preview.",
   "framework": false,
   "tags": ["rstudio"]
 }
