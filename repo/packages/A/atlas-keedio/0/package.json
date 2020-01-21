@@ -1,7 +1,7 @@
 {
   "packagingVersion": "2.0",
   "name": "atlas-keedio",
-  "version": "0.4",
+  "version": "0.5",
   "scm": "https://github.com/kloudoop/universe.git",
   "maintainer": "ofernandez@keedio.com",
   "description": "Apache Atlas DC/OS Service. Needs Elastic 2.6.0 + Kafka + Cassandra with Rpc enabled",
