@@ -19,7 +19,10 @@
                     "containerPort": 8080,
                     "hostPort": 0,
                     "servicePort": {{atlas.repository-port}},
-                    "protocol": "tcp"
+                    "protocol": "tcp",
+                    "labels": {
+                       "VIP_0": "atlas-repo:{{atlas.repository-port}}"
+                    }
                 }
             ]
         }
