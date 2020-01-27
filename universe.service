@@ -1,0 +1,14 @@
+[Unit]
+Description=Dcos Universe repository
+After=network.target
+
+[Service]
+Environment="UNIVERSE_PATH=/opt/keedio/universe/"
+Type=oneshot
+ExecStart=/opt/keedio/universe/keedio-start.sh
+RemainAfterExit=true
+ExecStop=/opt/keedio/universe/keedio-stop.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
