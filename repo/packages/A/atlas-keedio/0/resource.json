@@ -2,7 +2,7 @@
   "assets": {
     "container": {
       "docker": {
-        "atlas-docker": "keedio/atlas:1.3.0"
+        "atlas-docker": "keedio/atlas:latest"
       }
     },
     "uris": {
