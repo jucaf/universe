@@ -1,5 +1,10 @@
 {
   "assets": {
+    "container": {
+      "docker": {
+        "centos": "keedio/docker-rsyslog:latest"
+      }
+    },
     "uris": {
       "jre-tar-gz": "https://dcosutils.blob.core.windows.net/kloudoop/openjdk-jre-11.0.3.7-hotspot-linux-x64.tar.gz",
       "libmesos-bundle-tar-gz": "https://dcosutils.blob.core.windows.net/kloudoop/libmesos-bundle-1.14-beta.tar.gz",

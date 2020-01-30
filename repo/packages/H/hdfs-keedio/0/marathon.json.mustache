@@ -65,6 +65,9 @@
     {{#data_node.volume_profile}}
     "DATA_VOLUME_PROFILE": "{{data_node.volume_profile}}",
     {{/data_node.volume_profile}}
+    {{#data_node.volume_profile2}}
+    "DATA_VOLUME_PROFILE2": "{{data_node.volume_profile2}}",
+    {{/data_node.volume_profile2}}
     "LIBMESOS_URI": "{{resource.assets.uris.libmesos-bundle-tar-gz}}",
     "HDFS_URI": "{{resource.assets.uris.hdfs-tar-gz}}",
     "HDFS_JAVA_URI": "{{resource.assets.uris.hdfs-jre-tar-gz}}",
@@ -72,6 +75,7 @@
     "BOOTSTRAP_URI": "{{resource.assets.uris.bootstrap-zip}}",
     "JAVA_URI": "{{resource.assets.uris.jre-tar-gz}}",
     "ZONE_RESOLVER": "{{resource.assets.uris.zone-resolver-sh}}",
+    "CENTOS_IMAGE": "{{resource.assets.container.docker.centos}}",
 
     {{#service.region}}
     "SERVICE_REGION": "{{service.region}}",
@@ -245,6 +249,12 @@
     "TASKCFG_ALL_CLIENT_BLOCK_WRITE_REPLACE_DATANODE_ON_FAILURE_POLICY": "{{hdfs.client_block_write_replace-datanode-on-failure_policy}}",
     "TASKCFG_ALL_CLIENT_BLOCK_WRITE_REPLACE_DATANODE_ON_FAILURE_BEST_EFFORT": "{{hdfs.client_block_write_replace-datanode-on-failure_best-effort}}",
 
+    {{#name_node.atlas_integration}}
+    "ATLAS_ENABLED":"{{name_node.atlas_integration}}",
+    "KAFKA_BROKER_LIST":"{{name_node.atlas.kafka_broker_list}}",
+    "HDFS_AUDIT_FILE":"{{name_node.atlas.hdfs_audit_file}}",
+    "ATLAS_ENDPOINT":"{{name_node.atlas.atlas_endpoint}}",
+    {{/name_node.atlas_integration}}
     "TASKCFG_ALL_NAMENODE_HEARTBEAT_RECHECK_INTERVAL":"{{name_node.heartbeat_recheck_interval}}",
     "TASKCFG_ALL_NAMENODE_SAFEMODE_THRESHOLD_PCT":"{{name_node.safemode_threshold-pct}}",
     "TASKCFG_ALL_NAMENODE_LOGGING_LEVEL": "{{name_node.logging_level}}",

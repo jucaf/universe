@@ -292,6 +292,32 @@
       "description": "HDFS configuration properties.",
       "type": "object",
       "properties": {
+        "atlas_integration": {
+          "description": "Determines whether to enable Atlas integration.",
+          "type": "boolean",
+          "default": false
+        },
+        "atlas": {
+          "description": "Readiness check settings. Excercise caution when modifying these default values as it can lead to spurious task failures.",
+          "type": "object",
+          "properties": {
+            "atlas_endpoint": {
+              "description": "Atlas Endpoint",
+              "type": "string",
+              "default": "atlas-repo.marathon.l4lb.thisdcos.directory:21001"
+            },
+            "kafka_broker_list": {
+              "description": "Kafka broker",
+              "type": "string",
+              "default": "broker.kafka.l4lb.thisdcos.directory:9092"
+            },
+            "hdfs_audit_file": {
+              "description": "HDFS audit log location",
+              "type": "string",
+              "default": "$MESOS_SANDBOX/hadoop-3.2.1/logs/hdfs-audit.log"
+            }
+          }
+        },
         "cpus": {
           "description": "Name node CPU requirement",
           "type": "number",
@@ -811,6 +837,10 @@
         "volume_profile": {
           "type": "string",
           "description": "Volume profile to be used for storing DataNode data."
+        },
+        "volume_profile2": {
+          "type": "string",
+          "description": "Volume profile 2 to be used for storing DataNode data."
         },
         "handler_count": {
           "description": "The number of server threads for the datanode.",
