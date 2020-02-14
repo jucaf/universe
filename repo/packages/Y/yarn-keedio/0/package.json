@@ -1,7 +1,5 @@
 {
   "packagingVersion": "4.0",
-  "upgradesFrom": ["*"],
-  "downgradesTo": ["*"],
   "minDcosReleaseVersion": "1.11",
   "name": "yarn-keedio",
   "version":  "0.1",

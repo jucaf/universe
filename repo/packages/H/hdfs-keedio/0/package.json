@@ -1,11 +1,5 @@
 {
   "packagingVersion": "4.0",
-  "upgradesFrom": [
-    "2.7.0-3.2.1"
-  ],
-  "downgradesTo": [
-    "2.7.0-3.2.1"
-  ],
   "minDcosReleaseVersion": "1.11",
   "name": "hdfs-keedio",
   "version": "0.5.0-3.2.1",
