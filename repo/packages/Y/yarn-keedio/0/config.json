@@ -33,7 +33,7 @@
         "hdfs_service_name": {
           "description": "HDFS service name already running in the DCOS Cluster",
           "type": "string",
-          "default": "hdfs"
+          "default": "hdfs-keedio"
         }
       }
     },
