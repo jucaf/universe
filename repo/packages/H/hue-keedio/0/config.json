@@ -24,6 +24,21 @@
           "description": "Hue pod persistent disk requirements (in MB)",
           "type": "integer",
           "default": 10000
+        },
+        "yarn-service-name": {
+          "description": "YARN framework service name",
+          "type": "string",
+          "default": "yarn-keedio"
+        },
+        "hdfs-service-name": {
+          "description": "HDFS framework service name",
+          "type": "string",
+          "default": "hdfs-keedio"
+        },
+        "http-port": {
+          "description": "Webserver listens on this port",
+          "type": "integer",
+          "default": 8888
         }
       }
     }

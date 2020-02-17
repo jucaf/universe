@@ -1,7 +1,7 @@
 {
   "packagingVersion": "4.0",
   "name": "hue-keedio",
-  "version": "0.1",
+  "version": "0.2.0-3.2.1",
   "scm": "https://github.com/kloudoop/universe.git",
   "maintainer": "ofernandez@keedio.com",
   "description": "Hue Web Interface to Hadoop",

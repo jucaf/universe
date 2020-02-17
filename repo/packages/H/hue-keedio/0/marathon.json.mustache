@@ -18,11 +18,15 @@
             ]
         }
     },
-    "cmd": "apt-get install -y wget openjdk-8-jre && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/core-site.xml && wget http://api.hdfs.marathon.l4lb.thisdcos.directory/v1/endpoints/hdfs-site.xml && mv core-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/core-site.xml && mv hdfs-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/hdfs-site.xml && mv $MESOS_SANDBOX/hadoop-3.2.1 /usr/share/hue/hadoop-3.2.1 && cp -f $MESOS_SANDBOX/hue.ini /usr/share/hue/desktop/conf/hue.ini && cp -f $MESOS_SANDBOX/httpfs-site.xml /usr/share/hue/hadoop-3.2.1/etc/hadoop/httpfs-site.xml && update-java-alternatives -s java-1.8.0-openjdk-amd64 && export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64 && cd /usr/share/hue/hadoop-3.2.1/bin/ && ./hdfs --daemon start httpfs && cd /usr/share/hue/ && ./startup.sh",
+    "cmd": "apt-get install -y wget openjdk-8-jre && wget http://api.{{hue.hdfs-service-name}}.marathon.l4lb.thisdcos.directory/v1/endpoints/core-site.xml && wget http://api.{{hue.hdfs-service-name}}.marathon.l4lb.thisdcos.directory/v1/endpoints/hdfs-site.xml && mv core-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/core-site.xml && mv hdfs-site.xml $MESOS_SANDBOX/hadoop-3.2.1/etc/hadoop/hdfs-site.xml && mv $MESOS_SANDBOX/hadoop-3.2.1 /usr/share/hue/hadoop-3.2.1 && cp -f $MESOS_SANDBOX/hue.ini /usr/share/hue/desktop/conf/hue.ini && cp -f $MESOS_SANDBOX/httpfs-site.xml /usr/share/hue/hadoop-3.2.1/etc/hadoop/httpfs-site.xml && update-java-alternatives -s java-1.8.0-openjdk-amd64 && export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64 && cd /usr/share/hue/hadoop-3.2.1/bin/ && ./hdfs --daemon start httpfs && cd /usr/share/hue/ && ./startup.sh",
     "cpus": {{hue.cpus}},
     "disk": {{hue.disk}},
     "mem": {{hue.mem}},
     "instances": 1,
+    "env": {
+        "YARN_SERVICE_NAME": "{{hue.yarn-service-name}}",
+        "HTTP_PORT":  "{{hue.http-port}}"
+    },
     "upgradeStrategy": {
         "maximumOverCapacity": 1,
         "minimumHealthCapacity": 1
