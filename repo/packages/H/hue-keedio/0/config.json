@@ -5,6 +5,11 @@
       "description": "Hue specific configuration properties",
       "type": "object",
       "properties": {
+        "name": {
+          "description": "The name of the service instance",
+          "type": "string",
+          "default": "hue-keedio"
+        },
         "port": {
           "description": "Custom port to access Hue from the load balancer.",
           "type": "integer",

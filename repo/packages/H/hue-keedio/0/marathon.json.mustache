@@ -1,5 +1,5 @@
 {
-    "id": "/hue-keedio",
+    "id": "{{hue.name}}",
     "container": {
         "type": "DOCKER",
         "docker": {
@@ -48,7 +48,7 @@
         "{{resource.assets.uris.httpfs-xml}}"
     ],
     "labels": {
-        "DCOS_SERVICE_NAME": "hue-keedio",
+        "DCOS_SERVICE_NAME": "{{hue.name}}",
         "DCOS_SERVICE_PORT_INDEX": "0",
         "DCOS_SERVICE_SCHEME": "http",
         "HAPROXY_GROUP": "external",
