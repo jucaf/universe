@@ -1,5 +1,5 @@
 {
-    "id": "/atlas-keedio",
+    "id": "{{atlas.name}}",
     "container": {
         "type": "DOCKER",
         "docker": {
@@ -50,7 +50,7 @@
     "healthChecks": [
     ],
     "labels": {
-        "DCOS_SERVICE_NAME": "atlas-keedio",
+        "DCOS_SERVICE_NAME": "{{atlas.name}}",
         "DCOS_SERVICE_PORT_INDEX": "0",
         "DCOS_SERVICE_SCHEME": "http",
         "HAPROXY_GROUP": "external",

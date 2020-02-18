@@ -5,6 +5,11 @@
       "description": "Atlas specific configuration properties",
       "type": "object",
       "properties": {
+        "name": {
+          "description": "The name of the service instance",
+          "type": "string",
+          "default": "atlas-keedio"
+        },
         "kafka-brokers": {
           "description": "Kafka Broker list",
           "type": "string",
