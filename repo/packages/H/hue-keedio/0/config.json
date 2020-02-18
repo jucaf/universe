@@ -34,11 +34,6 @@
           "description": "HDFS framework service name",
           "type": "string",
           "default": "hdfs-keedio"
-        },
-        "http-port": {
-          "description": "Webserver listens on this port",
-          "type": "integer",
-          "default": 8888
         }
       }
     }
