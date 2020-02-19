@@ -2,7 +2,7 @@
   "packagingVersion": "4.0",
   "minDcosReleaseVersion": "1.11",
   "name": "hive-keedio",
-  "version": "0.1.0-3.1.2",
+  "version": "0.2.0-3.1.2",
   "maintainer": "info@keedio.com",
   "description": "Apache Hive is the central repository of Hive metadata. It stores the metadata for Hive tables and relations.",
   "framework": true,
