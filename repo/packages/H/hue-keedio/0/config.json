@@ -39,6 +39,21 @@
           "description": "HDFS framework service name",
           "type": "string",
           "default": "hdfs-keedio"
+        },
+        "mysql-hostname": {
+          "description": "Mysql endpoint",
+          "type": "string",
+          "default": "mysql.marathon.l4lb.thisdcos.directory"
+        },
+        "mysql-user": {
+          "description": "Mysql username",
+          "type": "string",
+          "default": "root"
+        },
+        "mysql-password": {
+          "description": "Mysql password",
+          "type": "string",
+          "default": "root"
         }
       }
     }
