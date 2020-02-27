@@ -13,7 +13,10 @@
                     "containerPort": 21000,
                     "hostPort": 0,
                     "servicePort": {{atlas.port}},
-                    "protocol": "tcp"
+                    "protocol": "tcp",
+                    "labels": {
+                        "VIP_1": "atlas-service:{{atlas.port}}"
+                    }
                 },
                 {
                     "containerPort": 8080,
