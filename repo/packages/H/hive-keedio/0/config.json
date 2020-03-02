@@ -13,7 +13,7 @@
         "user": {
           "description": "The user that the service will run as.",
           "type": "string",
-          "default": "nobody"
+          "default": "root"
         },
         "yarn_service_name": {
           "description": "Yarn Service Name",
@@ -24,6 +24,37 @@
           "description": "HDFS Service Name",
           "type": "string",
           "default": "hdfs-keedio"
+        },
+        "atlas_integration": {
+          "description": "Determines whether to enable Atlas integration.",
+          "type": "boolean",
+          "default": false
+        },
+        "atlas": {
+          "description": "Atlas integration config",
+          "type": "object",
+          "properties": {
+            "atlas_endpoint": {
+              "description": "Atlas Endpoint",
+              "type": "string",
+              "default": "atlas-repo.marathon.l4lb.thisdcos.directory:21001"
+            },
+            "hive_audit_file": {
+              "description": "HDFS audit log location",
+              "type": "string",
+              "default": "$HIVE_HOME/logs/HiveMetaStore.audit"
+            },
+            "atlas_username": {
+              "description": "Atlas username",
+              "type": "string",
+              "default": "admin"
+            },
+            "atlas_password": {
+              "description": "Atlas password",
+              "type": "string",
+              "default": "admin"
+            }
+          }
         },
         "service_account": {
           "description": "The service account for DC/OS service authentication. This is typically left empty to use the default unless service authentication is needed. The value given here is passed as the principal of the Mesos framework.",
@@ -147,17 +178,17 @@
         "cpus": {
           "description": "Hive Metastore pod CPU requirements",
           "type": "number",
-          "default": 0.5
+          "default": 1
         },
         "mem": {
           "description": "Hive Metastore pod mem requirements (in MB)",
           "type": "integer",
-          "default": 4096
+          "default": 8192
         },
         "disk": {
           "description": "Hive Metastore pod persistent disk requirements (in MB)",
           "type": "integer",
-          "default": 4096
+          "default": 8192
         },
         "disk_type": {
           "title": "Disk type [ROOT, MOUNT]",
@@ -244,12 +275,12 @@
         "cpus": {
           "description": "Hive Server pod CPU requirements",
           "type": "number",
-          "default": 1
+          "default": 4
         },
         "mem": {
           "description": "Hive Server pod mem requirements (in MB)",
           "type": "integer",
-          "default": 4096
+          "default": 16384
         },
         "port": {
           "title": "hive Server port",

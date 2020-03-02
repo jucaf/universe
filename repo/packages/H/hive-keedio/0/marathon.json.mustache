@@ -32,10 +32,10 @@
   },
   {{/service.service_account_secret}}
   "env": {
-    "PACKAGE_NAME": "hive",
-    "PACKAGE_VERSION": "1.0.0-3.0.0",
-    "PACKAGE_BUILD_TIME_EPOCH_MS": "1582104417370",
-    "PACKAGE_BUILD_TIME_STR": "Wed Feb 19 2020 09:26:57 +0000",
+    "PACKAGE_NAME": "{{package-name}}",
+    "PACKAGE_VERSION": "{{package-version}}",
+    "PACKAGE_BUILD_TIME_EPOCH_MS": "1583150026744",
+    "PACKAGE_BUILD_TIME_STR": "Mon Mar 02 2020 11:53:46 +0000",
     "FRAMEWORK_NAME": "{{service.name}}",
     "FRAMEWORK_LOG_LEVEL": "{{service.log_level}}",
     "FRAMEWORK_PRINCIPAL": "{{service.service_account}}",
@@ -57,6 +57,14 @@
     "HIVE_METASTORE_MEM": "{{hive_metastore.mem}}",
     "HIVE_METASTORE_DISK": "{{hive_metastore.disk}}",
     "HIVE_METASTORE_DISK_TYPE": "{{hive_metastore.disk_type}}",
+
+    {{#service.atlas_integration}}
+        "ATLAS_ENABLED":"{{service.atlas_integration}}",
+        "HIVE_AUDIT_FILE":"{{service.atlas.hive_audit_file}}",
+        "ATLAS_ENDPOINT":"{{service.atlas.atlas_endpoint}}",
+        "ATLAS_USERNAME":"{{service.atlas.atlas_username}}",
+        "ATLAS_PASSWORD":"{{service.atlas.atlas_password}}",
+    {{/service.atlas_integration}}
 
     "HIVE_SERVER_CPUS": "{{hive_server.cpus}}",
     "HIVE_SERVER_MEM": "{{hive_server.mem}}",
