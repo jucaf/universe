@@ -104,9 +104,9 @@
           "default": 3
         },
         "placement": {
-          "description": "Placement constraints for nodemanager pods",
+          "description": "Placement constraints for node manager (e.g., [[\"hostname\", \"UNIQUE\"]]).",
           "type": "string",
-          "default": "[[\"hostname\",\"UNIQUE\"],[\"hadoop\",\"IS\",\"datanode\"]]",
+          "default": "[]",
           "media": {
             "type": "application/x-zone-constraints+json"
           }
