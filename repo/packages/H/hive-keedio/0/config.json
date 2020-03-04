@@ -280,13 +280,18 @@
         "mem": {
           "description": "Hive Server pod mem requirements (in MB)",
           "type": "integer",
-          "default": 16384
+          "default": 8192
         },
         "port": {
           "title": "hive Server port",
           "description": "hive Server servers will run at this port.",
           "type": "integer",
           "default": 10000
+        },
+        "heapsize": {
+          "description": "Hive Server pod heap size (in MB)",
+          "type": "integer",
+          "default": 7000
         }
       },
       "required": [

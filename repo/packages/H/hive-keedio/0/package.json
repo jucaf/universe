@@ -2,7 +2,7 @@
   "packagingVersion": "4.0",
   "minDcosReleaseVersion": "1.11",
   "name": "hive-keedio",
-  "version": "0.3.0-3.1.2",
+  "version": "0.4.0-3.1.2",
   "maintainer": "info@keedio.com",
   "description": "Apache Hive Server + Metastore.",
   "framework": true,
