@@ -15,7 +15,7 @@
                     "servicePort": {{atlas.port}},
                     "protocol": "tcp",
                     "labels": {
-                        "VIP_1": "atlas-service:{{atlas.port}}"
+                        "VIP_1": "{{atlas.name}}-service:{{atlas.port}}"
                     }
                 },
                 {
@@ -24,7 +24,7 @@
                     "servicePort": {{atlas.repository-port}},
                     "protocol": "tcp",
                     "labels": {
-                       "VIP_0": "atlas-repo:{{atlas.repository-port}}"
+                       "VIP_0": "{{atlas.name}}-repo:{{atlas.repository-port}}"
                     }
                 }
             ]
@@ -34,7 +34,7 @@
         "ATLAS_PORT": "{{atlas.port}}",
         "ATLAS_HA_ENABLED": "false",
         "ATLAS_INSTANCES": "1",
-        "ATLAS_HA_ZKROOT": "/apache_atlas",
+        "ATLAS_HA_ZKROOT": "/{{atlas.name}}",
         "ZOOKEEPER_HOSTS": "master.mesos:2181",
         "KAFKA_BROKER_LIST": "{{atlas.kafka-brokers}}",
         "KAFKA_TOPIC_REPLICATION": "{{atlas.kafka-topic-replication}}",
