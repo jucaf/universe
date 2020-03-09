@@ -40,6 +40,11 @@
           "type": "string",
           "default": "hdfs-keedio"
         },
+        "hive-service-name": {
+          "description": "Hive framework service name",
+          "type": "string",
+          "default": "hive-keedio"
+        },
         "mysql-hostname": {
           "description": "Mysql endpoint",
           "type": "string",
