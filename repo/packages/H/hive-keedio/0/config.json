@@ -37,7 +37,7 @@
             "atlas_endpoint": {
               "description": "Atlas Endpoint",
               "type": "string",
-              "default": "atlas-repo.marathon.l4lb.thisdcos.directory:21001"
+              "default": "atlas-keedio-repo.marathon.l4lb.thisdcos.directory:21001"
             },
             "hive_audit_file": {
               "description": "HDFS audit log location",
