@@ -106,10 +106,42 @@
         "placement": {
           "description": "Placement constraints for node manager (e.g., [[\"hostname\", \"UNIQUE\"]]).",
           "type": "string",
-          "default": "[]",
+          "default": "[[\"hostname\", \"UNIQUE\"]]",
           "media": {
             "type": "application/x-zone-constraints+json"
           }
+        }
+      },
+      "required": [
+        "cpus",
+        "mem",
+        "disk",
+        "count"
+      ]
+    },
+    "timelineserver": {
+      "description": "timelineserver pod configuration properties",
+      "type": "object",
+      "properties": {
+        "count": {
+          "description": "Number of timelineserver pods to run",
+          "type": "integer",
+          "default": 0
+        },
+        "cpus": {
+          "description": "timelineserver pod CPU requirements",
+          "type": "number",
+          "default": 1
+        },
+        "mem": {
+          "description": "timelineserver pod mem requirements (in MB)",
+          "type": "integer",
+          "default": 2048
+        },
+        "disk": {
+          "description": "timelineserver pod persistent disk requirements (in MB)",
+          "type": "integer",
+          "default": 10000
         }
       },
       "required": [
