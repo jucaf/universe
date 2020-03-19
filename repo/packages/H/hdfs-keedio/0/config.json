@@ -298,13 +298,13 @@
           "default": false
         },
         "atlas": {
-          "description": "Readiness check settings. Excercise caution when modifying these default values as it can lead to spurious task failures.",
+          "description": "Atlas integration config",
           "type": "object",
           "properties": {
             "atlas_endpoint": {
               "description": "Atlas Endpoint",
               "type": "string",
-              "default": "atlas-repo.marathon.l4lb.thisdcos.directory:21001"
+              "default": "atlas-keedio-repo.marathon.l4lb.thisdcos.directory:21001"
             },
             "kafka_broker_list": {
               "description": "Kafka broker",
@@ -315,6 +315,11 @@
               "description": "HDFS audit log location",
               "type": "string",
               "default": "$MESOS_SANDBOX/hadoop-3.2.1/logs/hdfs-audit.log"
+            },
+            "debug_atlas": {
+              "description": "Generate atlas debug messages",
+              "type": "boolean",
+              "default": false
             }
           }
         },
