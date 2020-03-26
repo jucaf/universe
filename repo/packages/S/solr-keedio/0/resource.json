@@ -1,0 +1,20 @@
+{
+  "assets": {
+    "container": {
+      "docker": {
+        "solr": "solr:8.3"
+      }
+    },
+    "uris": {
+      "jre-tar-gz": "https://dcosutils.blob.core.windows.net/kloudoop/openjdk-jre-11.0.3.7-hotspot-linux-x64.tar.gz",
+      "libmesos-bundle-tar-gz": "https://dcosutils.blob.core.windows.net/kloudoop/libmesos-bundle-1.14-beta.tar.gz",
+      "scheduler-zip": "https://dcosutils.blob.core.windows.net/kloudoop/solr-scheduler.zip",
+      "bootstrap-zip": "https://dcosutils.blob.core.windows.net/kloudoop/bootstrap.zip"
+    }
+  },
+  "images": {
+    "icon-small": "https://github.com/kloudoop/dcos-solr-service/blob/master/src/resources/solr-icon-small.png?raw=true",
+    "icon-medium": "https://github.com/kloudoop/dcos-solr-service/blob/master/src/resources/solr-icon-medium.png?raw=true",
+    "icon-large": "https://github.com/kloudoop/dcos-solr-service/blob/master/src/resources/solr-icon-large.png?raw=true"
+  }
+}

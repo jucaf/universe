@@ -1,0 +1,102 @@
+{
+  "type": "object",
+  "properties": {
+    "service": {
+      "type": "object",
+      "description": "DC/OS service configuration properties",
+      "properties": {
+        "name": {
+          "description": "The name of the service instance",
+          "type": "string",
+          "default": "solr-keedio"
+        },
+        "user": {
+          "description": "The user that the service will run as.",
+          "type": "string",
+          "default": "nobody"
+        },
+        "log_level": {
+          "description": "The log level for the DC/OS service.",
+          "type": "string",
+          "enum": [
+            "OFF",
+            "FATAL",
+            "ERROR",
+            "WARN",
+            "INFO",
+            "DEBUG",
+            "TRACE",
+            "ALL"
+          ],
+          "default": "INFO"
+        }
+      }
+    },
+    "solrpod": {
+      "description": "solrpod configuration properties",
+      "type": "object",
+      "properties": {
+        "cpus": {
+          "description": "solrpod CPU requirements",
+          "type": "number",
+          "default": 1
+        },
+        "mem": {
+          "description": "solrpod mem requirements (in MB)",
+          "type": "integer",
+          "default": 2048
+        },
+        "count": {
+          "description": "Number of solrpod pods to run",
+          "type": "integer",
+          "default": 3
+        },
+        "zookeeper_url": {
+          "description": "Url of zookeeper nodes",
+          "type": "string",
+          "default": "master.mesos:2181"
+        },
+        "port": {
+          "description": "Solr port",
+          "type": "integer",
+          "default": 8983
+        },
+        "disk": {
+          "description": "Solr persistant disk size en MB",
+          "type": "integer",
+          "default": 10000
+        },
+        "disk_type": {
+          "description": "Solr disk type",
+          "type": "string",
+          "enum": [
+            "ROOT",
+            "MOUNT"
+          ],
+          "default": "ROOT"
+        },
+        "disk_profile": {
+          "description": "Solr volume profile to use",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cpus",
+        "mem",
+        "count",
+        "zookeeper_url"
+      ]
+    },
+    "initialize": {
+      "description" : "List of collections to generate on SOLR on boot",
+      "type": "object",
+      "properties": {
+        "collections_to_gen": {
+          "description": "List in the form 'COLL1 SHARDS1 REPL1;COLL2 SHARDS2 REPL2;...'",
+          "type":"string",
+          "default":""
+        }
+      }
+    }
+  }
+}

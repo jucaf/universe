@@ -1,0 +1,17 @@
+{
+  "packagingVersion": "4.0",
+  "minDcosReleaseVersion": "1.9",
+  "upgradesFrom": [
+  ],
+  "downgradesTo": [
+  ],
+  "name": "solr-keedio",
+  "version": "0.1.0-8.3",
+  "maintainer": "jcfernandez@keedio.com",
+  "description": "solr service on DC/OS",
+  "selected": false,
+  "framework": true,
+  "tags": ["kloudoop", "reference", "solr"],
+  "postInstallNotes": "The DC/OS solr service is being installed!\n\n\tDocumentation: {{documentation-path}}\n\tIssues: {{issues-path}}",
+  "postUninstallNotes": "The DC/OS solr service is being uninstalled.\n\nFor DC/OS versions from 1.10 no further action is required. For older DC/OS versions follow the instructions at https://docs.mesosphere.com/1.9/deploying-services/uninstall/#framework-cleaner to remove any persistent state if required."
+}
