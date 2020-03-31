@@ -1,0 +1,16 @@
+{
+  "assets": {
+    "container": {
+      "docker": {
+        "rangers-docker": "keedio/ranger:1.1.0"
+      }
+    },
+    "uris": {
+    }
+  },
+  "images": {
+    "icon-small": "https://dcosutils.blob.core.windows.net/kloudoop/ranger-logo.png",
+    "icon-medium": "https://dcosutils.blob.core.windows.net/kloudoop/ranger-logo.png",
+    "icon-large": "https://dcosutils.blob.core.windows.net/kloudoop/ranger-logo.png"
+  }
+}
