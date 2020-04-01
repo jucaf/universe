@@ -1,0 +1,73 @@
+{
+    "id": "{{ranger.name}}",
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "image": "keedio/ranger:latest",
+            "privileged": false,
+            "forcePullImage": false,
+            "parameters": [],
+            "network": "BRIDGE",
+            "portMappings": [
+                {
+                    "containerPort": 6080,
+                    "hostPort": 0,
+                    "servicePort": {{ranger.port}},
+                    "protocol": "tcp",
+                    "labels": {
+                        "VIP_1": "{{ranger.name}}-service:{{ranger.port}}"
+                    }
+                },
+                {
+                    "containerPort": 8080,
+                    "hostPort": 0,
+                    "servicePort": {{ranger.repository-port}},
+                    "protocol": "tcp",
+                    "labels": {
+                       "VIP_0": "{{ranger.name}}-repo:{{ranger.repository-port}}"
+                    }
+                }
+            ]
+        }
+    },
+    "env": {
+      "RANGER_ADMIN_PASSWORD": "{{ranger.admin_password}}",
+      "RANGER_TAGSYNC_PASSWORD": "{{ranger.admin_password}}",
+      "RANGER_USERSYNC_PASSWORD": "{{ranger.admin_password}}",
+      "KEYADMIN_PASSWORD": "{{ranger.admin_password}}",
+      "ZOOKEEPERS": "{{ranger.zookeeper}}",
+      "AUTHENTINCATION_METHOD": "{{ranger.authentication_method}}",
+      "SOLR_HOST": "{{solr.host}}",
+      "SOLR_PORT": "{{solr.port}}",
+      "MAX_AUDIT_RETENTION_DAYS": "{{solr.audit_retention}}",
+      "SOLR_COLLECTION_NAME": "{{solr.collection_name}}",
+      "SOLR_CONFIG_NAME": "{{solr.collection_config_name}}",
+      "SOLR_NO_SHARD": "{{solr.collection_shards}}",
+      "SOLR_NO_REPLICA": "{{solr.collection_replica}}",
+      "DB_FLAVOR": "{{db.flavor}}",
+      "DB_HOST": "{{db.host}}",
+      "DB_PORT": "{{db.port}}",
+      "DB_NAME": "{{db.db_name}}",
+      "DB_ROOT_USER": "{{db.root_user}}",
+      "DB_ROOT_PASSWORD": "{{db.root_pass}}",
+      "DB_USER": "{{db.user}}",
+      "DB_PASSWORD": "{{db.user_pass}}",
+      "ZNODE":"{{solr.znode}}"
+    },
+    "cpus": {{ranger.cpus}},
+    "mem": {{ranger.mem}},
+    "instances": 1,
+    "upgradeStrategy": {
+        "maximumOverCapacity": 1,
+        "minimumHealthCapacity": 1
+    },
+    "healthChecks": [
+    ],
+    "labels": {
+        "DCOS_SERVICE_NAME": "{{ranger.name}}",
+        "DCOS_SERVICE_PORT_INDEX": "0",
+        "DCOS_SERVICE_SCHEME": "http",
+        "HAPROXY_GROUP": "external",
+        "DCOS_PACKAGE_IS_FRAMEWORK": "false"
+    }
+}

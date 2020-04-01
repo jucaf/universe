@@ -1,0 +1,11 @@
+{
+  "packagingVersion": "4.0",
+  "name": "ranger-keedio",
+  "version": "2.0.0",
+  "scm": "https://github.com/kloudoop/universe.git",
+  "maintainer": "jcfernandez@keedio.com",
+  "description": "Apache Ranger DC/OS Service. Needs SOLR + Mysql + Zookeeper",
+  "preInstallNotes": "This DC/OS Service is currently in preview.",
+  "framework": false,
+  "tags": ["ranger","security","authorization","governance", "bigdata"]
+}
